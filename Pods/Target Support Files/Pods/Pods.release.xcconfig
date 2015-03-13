@@ -1,9 +1,9 @@
-CLANG_CXX_LANGUAGE_STANDARD = compiler-default
+FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Alamofire" "${PODS_ROOT}/Headers/Public/Masonry" "${PODS_ROOT}/Headers/Public/OpenUDID" "${PODS_ROOT}/Headers/Public/Realm" "${PODS_ROOT}/Headers/Public/Realm/Realm" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/Spring" "${PODS_ROOT}/Headers/Public/SwiftyJSON"
-LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Realm/core"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Alamofire" -isystem "${PODS_ROOT}/Headers/Public/Masonry" -isystem "${PODS_ROOT}/Headers/Public/OpenUDID" -isystem "${PODS_ROOT}/Headers/Public/Realm" -isystem "${PODS_ROOT}/Headers/Public/Realm/Realm" -isystem "${PODS_ROOT}/Headers/Public/SVProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/Spring" -isystem "${PODS_ROOT}/Headers/Public/SwiftyJSON"
-OTHER_CPLUSPLUSFLAGS = -std=c++1y $(inherited) -std=c++1y $(inherited)
-OTHER_LDFLAGS = -ObjC -l"Pods-Alamofire" -l"Pods-Masonry" -l"Pods-OpenUDID" -l"Pods-Realm" -l"Pods-SVProgressHUD" -l"Pods-Spring" -l"Pods-SwiftyJSON" -l"c++" -l"tightdb-ios" -framework "Foundation" -framework "QuartzCore" -framework "UIKit"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_FRAMEWORK_BUILD_PATH/Alamofire.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/Masonry.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/OpenUDID.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/Realm.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/SVProgressHUD.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/Spring.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/SwiftyJSON.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "Alamofire" -framework "Masonry" -framework "OpenUDID" -framework "Realm" -framework "SVProgressHUD" -framework "Spring" -framework "SwiftyJSON"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
 PODS_ROOT = ${SRCROOT}/Pods
