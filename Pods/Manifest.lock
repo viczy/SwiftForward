@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (1.1.4)
-  - Masonry (0.6.1)
+  - Cartography (0.2.1)
   - OpenUDID (1.0.0)
   - Realm (0.90.6):
     - Realm/Headers (= 0.90.6)
@@ -11,7 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 1.1)
-  - Masonry
+  - Cartography
   - OpenUDID
   - Realm (~> 0.90.6)
   - Spring (~> 1.0.1)
@@ -20,7 +20,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 524225da382071ee3e6d0badd0ee4b4dc36740de
-  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+  Cartography: 9efb847f5068db052df1f8627e70382e37e17184
   OpenUDID: 5a23b7477755efc2d7871b57aa79ba3089c40b74
   Realm: 6c3facc11964ab9f828f47de6d0e9bf9c4d9c818
   Spring: e89869046a8b25c17fed7a5b123685738a63b26a

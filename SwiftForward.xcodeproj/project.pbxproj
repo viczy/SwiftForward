@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B1036F80834ACA9CAAE2E9D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF91777C66CA8B3AEA3A477 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F98ABBB11AB2CC1200D02519 /* SFBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ABBB01AB2CC1200D02519 /* SFBaseController.swift */; };
+		F9B293D51AB826150066AEFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B293D41AB826150066AEFC /* Default-568h@2x.png */; };
 		F9E9333D1AB00A0B00C5B494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9333C1AB00A0B00C5B494 /* AppDelegate.swift */; };
 		F9E9333F1AB00A0B00C5B494 /* SFMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9333E1AB00A0B00C5B494 /* SFMenuController.swift */; };
 		F9E9335F1AB00C2A00C5B494 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E9335D1AB00C2A00C5B494 /* Images.xcassets */; };
@@ -20,6 +21,7 @@
 		6FF91777C66CA8B3AEA3A477 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98ABBB01AB2CC1200D02519 /* SFBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBaseController.swift; sourceTree = "<group>"; };
 		F98ABBB21AB2DCE200D02519 /* SwiftForward-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftForward-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9B293D41AB826150066AEFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F9E933371AB00A0B00C5B494 /* SwiftForward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftForward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E9333C1AB00A0B00C5B494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E9333E1AB00A0B00C5B494 /* SFMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMenuController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		F9E9332E1AB00A0B00C5B494 = {
 			isa = PBXGroup;
 			children = (
+				F9B293D41AB826150066AEFC /* Default-568h@2x.png */,
 				F9E933391AB00A0B00C5B494 /* SwiftForward */,
 				F9E9335C1AB00C2A00C5B494 /* Resource */,
 				F9E933381AB00A0B00C5B494 /* Products */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E9335F1AB00C2A00C5B494 /* Images.xcassets in Resources */,
+				F9B293D51AB826150066AEFC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

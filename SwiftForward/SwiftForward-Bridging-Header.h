@@ -12,9 +12,6 @@
 //OpenUDID
 #import<OpenUDID/OpenUDID.h>
 
-//Masonry
-#import<Masonry/Masonry.h>
-
 
 
 

@@ -9,7 +9,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 ## AutoLayout
-pod 'Masonry'
+pod 'Cartography'
 
 ##Net
 pod 'Alamofire', '~> 1.1'

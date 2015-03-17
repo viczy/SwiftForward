@@ -12,11 +12,11 @@
 #define COCOAPODS_VERSION_MINOR_Alamofire 1
 #define COCOAPODS_VERSION_PATCH_Alamofire 4
 
-// Masonry
-#define COCOAPODS_POD_AVAILABLE_Masonry
-#define COCOAPODS_VERSION_MAJOR_Masonry 0
-#define COCOAPODS_VERSION_MINOR_Masonry 6
-#define COCOAPODS_VERSION_PATCH_Masonry 1
+// Cartography
+#define COCOAPODS_POD_AVAILABLE_Cartography
+#define COCOAPODS_VERSION_MAJOR_Cartography 0
+#define COCOAPODS_VERSION_MINOR_Cartography 2
+#define COCOAPODS_VERSION_PATCH_Cartography 1
 
 // OpenUDID
 #define COCOAPODS_POD_AVAILABLE_OpenUDID

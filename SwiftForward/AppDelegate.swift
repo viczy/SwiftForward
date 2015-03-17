@@ -15,9 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+
         let menuController:SFMenuController = SFMenuController()
         let navMenu:UINavigationController = UINavigationController(rootViewController: menuController)
         self.window?.rootViewController = navMenu
+        self.window?.makeKeyAndVisible()
 
         return true
     }

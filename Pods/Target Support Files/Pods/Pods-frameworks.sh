@@ -49,7 +49,7 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'Masonry.framework'
+  install_framework 'Cartography.framework'
   install_framework 'OpenUDID.framework'
   install_framework 'Realm.framework'
   install_framework 'SVProgressHUD.framework'
@@ -58,7 +58,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
-  install_framework 'Masonry.framework'
+  install_framework 'Cartography.framework'
   install_framework 'OpenUDID.framework'
   install_framework 'Realm.framework'
   install_framework 'SVProgressHUD.framework'
