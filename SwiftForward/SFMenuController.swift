@@ -14,27 +14,44 @@ class SFMenuController: SFBaseController {
     private var tableView: UITableView!
     private var menuArray: NSArray!
 
+    //MARK:Init
+    override init() {
+        super.init()
+        self.propertyInit()
+    }
+
+    override init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     //MARK:Load&Appear
     override func loadView() {
         super.loadView()
-        self.propertyInit()
-        self.view.addSubview(self.tableView)
-        layout(tableView) { view in
-            view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
-        }
+        self.tableViewLayout()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     //MARK:Property Init
     private func propertyInit() {
         //tableView
-        tableView = UITableView(frame: self.view.bounds)
+        tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
         //menuArray
         menuArray = ["Refresh", "Alamofire", "Realm"]
+    }
+
+    //MARK:Layout
+    private func tableViewLayout() {
+        self.view.addSubview(self.tableView)
+        layout(tableView) { view in
+            view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
+        }
     }
 
     //MARK:MemoryWarning
