@@ -11,8 +11,9 @@ import Cartography
 
 class SFMenuController: SFBaseController {
     //MARK:Property
-    private var tableView: UITableView!
     private var menuArray: NSArray!
+    private var tableView: UITableView!
+    private var arrayDataSource: SFArrayDataSource!
 
     //MARK:Init
     override init() {
@@ -20,8 +21,8 @@ class SFMenuController: SFBaseController {
         self.propertyInit()
     }
 
-    override init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -31,7 +32,7 @@ class SFMenuController: SFBaseController {
     //MARK:Load&Appear
     override func loadView() {
         super.loadView()
-        self.tableViewLayout()
+        tableViewLayout()
     }
 
     override func viewDidLoad() {
@@ -40,15 +41,25 @@ class SFMenuController: SFBaseController {
 
     //MARK:Property Init
     private func propertyInit() {
-        //tableView
-        tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
         //menuArray
         menuArray = ["Refresh", "Alamofire", "Realm"]
+
+        //tableView
+        tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+        var configureBlock:CellConfigureBlock = configureCell
+        let identifier = "menuIdentifier"
+        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: "menuIdentifier", configureCellBlock: configureBlock)
+        tableView.dataSource = arrayDataSource
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
+    }
+
+    func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
+        aCell.textLabel?.text = aItem as? String
     }
 
     //MARK:Layout
     private func tableViewLayout() {
-        self.view.addSubview(self.tableView)
+        self.view.addSubview(tableView)
         layout(tableView) { view in
             view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
         }
@@ -59,5 +70,6 @@ class SFMenuController: SFBaseController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }
 
