@@ -12,6 +12,7 @@
 		F98ABBB11AB2CC1200D02519 /* SFBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ABBB01AB2CC1200D02519 /* SFBaseController.swift */; };
 		F9B293D51AB826150066AEFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B293D41AB826150066AEFC /* Default-568h@2x.png */; };
 		F9E6D34A1ABA73C50059338E /* SFRefreshListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6D3491ABA73C50059338E /* SFRefreshListController.swift */; };
+		F9E6D34D1ABAA1830059338E /* SFHUDListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6D34C1ABAA1830059338E /* SFHUDListController.swift */; };
 		F9E9333D1AB00A0B00C5B494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9333C1AB00A0B00C5B494 /* AppDelegate.swift */; };
 		F9E9333F1AB00A0B00C5B494 /* SFMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E9333E1AB00A0B00C5B494 /* SFMenuController.swift */; };
 		F9E9335F1AB00C2A00C5B494 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E9335D1AB00C2A00C5B494 /* Images.xcassets */; };
@@ -27,6 +28,7 @@
 		F9B293D41AB826150066AEFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F9E6D3491ABA73C50059338E /* SFRefreshListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFRefreshListController.swift; sourceTree = "<group>"; };
 		F9E6D34B1ABA768F0059338E /* SFPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFPrefixHeader.pch; sourceTree = "<group>"; };
+		F9E6D34C1ABAA1830059338E /* SFHUDListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFHUDListController.swift; sourceTree = "<group>"; };
 		F9E933371AB00A0B00C5B494 /* SwiftForward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftForward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E9333C1AB00A0B00C5B494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E9333E1AB00A0B00C5B494 /* SFMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMenuController.swift; sourceTree = "<group>"; };
@@ -83,8 +85,10 @@
 		F91506821AB2C49600A89742 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F9E6D34E1ABAA2140059338E /* Refresh */,
 				F9E9333E1AB00A0B00C5B494 /* SFMenuController.swift */,
 				F9E6D3491ABA73C50059338E /* SFRefreshListController.swift */,
+				F9E6D34C1ABAA1830059338E /* SFHUDListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -98,10 +102,25 @@
 			name = Custom;
 			sourceTree = "<group>";
 		};
+		F99674E81ABACEB80075780C /* SwiftForwardKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftForwardKit;
+			sourceTree = "<group>";
+		};
+		F9E6D34E1ABAA2140059338E /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Refresh;
+			sourceTree = "<group>";
+		};
 		F9E9332E1AB00A0B00C5B494 = {
 			isa = PBXGroup;
 			children = (
 				F9B293D41AB826150066AEFC /* Default-568h@2x.png */,
+				F99674E81ABACEB80075780C /* SwiftForwardKit */,
 				F9E933391AB00A0B00C5B494 /* SwiftForward */,
 				F9E9335C1AB00C2A00C5B494 /* Resource */,
 				F9E933381AB00A0B00C5B494 /* Products */,
@@ -263,6 +282,7 @@
 				F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */,
 				F9E6D34A1ABA73C50059338E /* SFRefreshListController.swift in Sources */,
 				F9E9333D1AB00A0B00C5B494 /* AppDelegate.swift in Sources */,
+				F9E6D34D1ABAA1830059338E /* SFHUDListController.swift in Sources */,
 				F98ABBB11AB2CC1200D02519 /* SFBaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,23 +1,25 @@
 //
-//  ViewController.swift
+//  SFHUDController.swift
 //  SwiftForward
 //
-//  Created by Vic Zhou on 3/11/15.
+//  Created by Vic Zhou on 3/19/15.
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
-import UIKit
 import Cartography
+import SVProgressHUD
 
-enum MenuIndex:Int {
-    case Refresh = 0, HUD, Alamofire, Realm
+enum HUDIndex:Int {
+    case Normal = 0, Progress, Success
 }
 
-class SFMenuController: SFBaseController, UITableViewDelegate {
+class SFHUDListController: SFBaseController, UITableViewDelegate {
     //MARK:Property
     private var menuArray: NSArray!
-    private var tableView: UITableView!
     private var arrayDataSource: SFArrayDataSource!
+
+    private var tableView: UITableView!
+    private var dimissButtonItem: UIBarButtonItem!
 
     //MARK:Init
     override init() {
@@ -36,6 +38,7 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     override func loadView() {
         self.propertyInit()
         super.loadView()
+        navigationItem.rightBarButtonItem = dimissButtonItem
         tableViewLayout()
     }
 
@@ -46,16 +49,19 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property Init
     private func propertyInit() {
         //menuArray
-        menuArray = ["Refresh", "HUD", "Alamofire", "Realm"]
+        menuArray = ["Normal", "Progress", "Success"]
 
         //tableView
         tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
         var configureBlock:CellConfigureBlock = configureCell
-        let identifier = "menuIdentifier"
+        let identifier = "refreshListIdentifier"
         arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureBlock)
         tableView.dataSource = arrayDataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
+
+        //dimissButtonItem
+        dimissButtonItem = UIBarButtonItem(title: "dismiss", style: UIBarButtonItemStyle.Done, target: self, action:"dismissHUD")
     }
 
     func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
@@ -70,25 +76,25 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         }
     }
 
+    private func dismissHUD() {
+        SVProgressHUD.popActivity()
+    }
+
     //MARK:UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var controller:SFBaseController?
-        if let index = MenuIndex(rawValue: indexPath.row) {
+        if let index = HUDIndex(rawValue: indexPath.row) {
             switch index {
-            case .Refresh:
-                controller = SFRefreshListController()
+            case .Normal:
+                SVProgressHUD.show()
 
-            case .HUD:
-                controller = SFHUDListController()
-
-
-            case .Alamofire:
+            case .Progress:
                 return
+
+            case .Success:
+                SVProgressHUD.showSuccessWithStatus("SUCCESS")
                 
-            case .Realm:
-                return
-
             }
         }
         if let myController = controller {
@@ -101,6 +107,4 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
-

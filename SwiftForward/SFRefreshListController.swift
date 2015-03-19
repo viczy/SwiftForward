@@ -8,6 +8,10 @@
 
 import Cartography
 
+enum RefreshIndex:Int {
+    case Refresh = 0, More, All, None
+}
+
 class SFRefreshListController: SFBaseController, UITableViewDelegate {
     //MARK:Property
     private var menuArray: NSArray!
@@ -67,8 +71,27 @@ class SFRefreshListController: SFBaseController, UITableViewDelegate {
 
     //MARK:UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let refreshListController:SFRefreshListController = SFRefreshListController()
-        self.navigationController?.pushViewController(refreshListController, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var controller:SFBaseController?
+        if let index = RefreshIndex(rawValue: indexPath.row) {
+            switch index {
+            case .Refresh:
+                controller = SFRefreshListController()
+
+            case .More:
+                return
+
+            case .All:
+                return
+
+            case .None:
+                return
+
+            }
+        }
+        if let myController = controller {
+            self.navigationController?.pushViewController(myController, animated: true)
+        }
     }
 
     //MARK:MemoryWarning

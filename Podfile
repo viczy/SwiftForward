@@ -27,7 +27,7 @@ pod 'Spring', '~> 1.0.1'
 pod 'OpenUDID'
 
 ##HUD
-pod 'SVProgressHUD'
+pod 'SVProgressHUD', :head
 
 ##refresh
 pod 'CBStoreHouseRefreshControl'
