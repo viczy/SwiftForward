@@ -49,6 +49,7 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
+  install_framework 'CBStoreHouseRefreshControl.framework'
   install_framework 'Cartography.framework'
   install_framework 'OpenUDID.framework'
   install_framework 'Realm.framework'
@@ -58,6 +59,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
+  install_framework 'CBStoreHouseRefreshControl.framework'
   install_framework 'Cartography.framework'
   install_framework 'OpenUDID.framework'
   install_framework 'Realm.framework'

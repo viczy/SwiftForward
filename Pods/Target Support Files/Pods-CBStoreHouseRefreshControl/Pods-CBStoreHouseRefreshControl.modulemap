@@ -1,0 +1,6 @@
+framework module CBStoreHouseRefreshControl {
+  umbrella header "Pods-CBStoreHouseRefreshControl-umbrella.h"
+
+  export *
+  module * { export * }
+}

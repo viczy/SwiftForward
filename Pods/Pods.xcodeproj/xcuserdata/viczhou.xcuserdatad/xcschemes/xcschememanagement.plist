@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CBStoreHouseRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Cartography.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,42 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0BD55B8B9D5E66B2264C8CE8</key>
+		<key>1E7D45434C08C39A33C4B7B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49BEBCF8B335B8F699EA3DAF</key>
+		<key>56A6A1BB8E82472A92365C48</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69F0D1C5115C1D80B9E987E6</key>
+		<key>685810556AC38A2ACA441845</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>814602681515710F2F56BCD8</key>
+		<key>6A31F71BE5425F4F0D35705C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CFBD2145F53183D8C3F022A</key>
+		<key>91E4EC3022DA5F1327B3A8E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98A5701098DF825231857B1B</key>
+		<key>C17527D6D5325D517CC23EBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D73A60C169D6F7F922A9BEEE</key>
+		<key>E4D527A6C275023C7C95E05B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F918C2632E5DB9E9F32278E0</key>
+		<key>F259EF9161C1B2794A855C60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD2E729ECAB9B2F3AE6C1EDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

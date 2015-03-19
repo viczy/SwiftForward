@@ -1,19 +1,14 @@
 //
-//  ViewController.swift
+//  SFRefreshListController.swift
 //  SwiftForward
 //
-//  Created by Vic Zhou on 3/11/15.
+//  Created by Vic Zhou on 3/19/15.
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
-import UIKit
 import Cartography
 
-enum MenuIndex:Int {
-    case Refresh = 0, Alamofire, Realm
-}
-
-class SFMenuController: SFBaseController, UITableViewDelegate {
+class SFRefreshListController: SFBaseController, UITableViewDelegate {
     //MARK:Property
     private var menuArray: NSArray!
     private var tableView: UITableView!
@@ -46,12 +41,12 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property Init
     private func propertyInit() {
         //menuArray
-        menuArray = ["Refresh", "Alamofire", "Realm"]
+        menuArray = ["Refresh", "More", "All", "None"]
 
         //tableView
         tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
         var configureBlock:CellConfigureBlock = configureCell
-        let identifier = "menuIdentifier"
+        let identifier = "refreshListIdentifier"
         arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureBlock)
         tableView.dataSource = arrayDataSource
         tableView.delegate = self
@@ -72,21 +67,8 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 
     //MARK:UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let index = MenuIndex(rawValue: indexPath.row) {
-            switch index {
-            case .Refresh:
-                let refreshListController:SFRefreshListController = SFRefreshListController()
-                self.navigationController?.pushViewController(refreshListController, animated: true)
-
-            case .Alamofire:
-                return
-                
-            case .Realm:
-                return
-
-            }
-        }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let refreshListController:SFRefreshListController = SFRefreshListController()
+        self.navigationController?.pushViewController(refreshListController, animated: true)
     }
 
     //MARK:MemoryWarning
@@ -96,4 +78,3 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     }
 
 }
-
