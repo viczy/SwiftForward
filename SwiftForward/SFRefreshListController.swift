@@ -14,9 +14,9 @@ enum RefreshIndex:Int {
 
 class SFRefreshListController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    private var menuArray: NSArray!
-    private var tableView: UITableView!
-    private var arrayDataSource: SFArrayDataSource!
+    let menuArray: Array<String> = ["Refresh", "More", "All", "None"]
+    let tableView: UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+    private var arrayDataSource:SFArrayDataSource?
 
     //MARK:Init
     override init() {
@@ -33,9 +33,8 @@ class SFRefreshListController: SFBaseController, UITableViewDelegate {
 
     //MARK:Load&Appear
     override func loadView() {
-        self.propertyInit()
         super.loadView()
-        tableViewLayout()
+        self.setUpView()
     }
 
     override func viewDidLoad() {
@@ -43,30 +42,20 @@ class SFRefreshListController: SFBaseController, UITableViewDelegate {
     }
 
     //MARK:Property Init
-    private func propertyInit() {
-        //menuArray
-        menuArray = ["Refresh", "More", "All", "None"]
-
-        //tableView
-        tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
-        var configureBlock:CellConfigureBlock = configureCell
+    private func setUpView() {
         let identifier = "refreshListIdentifier"
-        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureBlock)
+        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureCell)
         tableView.dataSource = arrayDataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
-    }
-
-    func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
-        aCell.textLabel?.text = aItem as? String
-    }
-
-    //MARK:Layout
-    private func tableViewLayout() {
         self.view.addSubview(tableView)
         layout(tableView) { view in
             view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
         }
+    }
+
+    func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
+        aCell.textLabel?.text = aItem as? String
     }
 
     //MARK:UITableViewDelegate

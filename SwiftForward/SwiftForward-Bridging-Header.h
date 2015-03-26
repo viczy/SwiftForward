@@ -7,7 +7,7 @@
 //
 
 //SVProgressHUD
-#import<MBProgressHUD/MBProgressHUD.h>
+#import<SVProgressHUD/SVProgressHUD.h>
 
 //OpenUDID
 #import<OpenUDID/OpenUDID.h>

@@ -8,20 +8,20 @@
 
 import UIKit
 
-typealias CellConfigureBlock = (UITableViewCell, AnyObject) -> Void
+typealias TableCellConfigureBlock = (UITableViewCell, AnyObject) -> Void
 
 class SFArrayDataSource: NSObject, UITableViewDataSource {
     //MARK:Property
-    var items:NSArray?
-    var cellIdentifier:String?
-    var configureCellBlock:CellConfigureBlock?
+    private var items:Array<AnyObject>?
+    private var cellIdentifier:String?
+    private var configureCellBlock:TableCellConfigureBlock?
 
     override init() {
         super.init()
     }
 
     //MARK:Init
-    convenience init(items anItems:NSArray?, cellIdentifier aCellidentifier:String?, configureCellBlock aConfigureCellBlock:CellConfigureBlock?) {
+    convenience init(items anItems:NSArray?, cellIdentifier aCellidentifier:String?, configureCellBlock aConfigureCellBlock:TableCellConfigureBlock?) {
         self.init();
         self.items = anItems
         self.cellIdentifier = aCellidentifier
@@ -30,15 +30,19 @@ class SFArrayDataSource: NSObject, UITableViewDataSource {
 
     //MARK:UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items!.count
+        if let myItems = items {
+            return myItems.count
+        }
+        return 0
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier!, forIndexPath: indexPath) as? UITableViewCell
-
         if let myItems = items {
             var item:AnyObject = myItems[indexPath.row]
-            configureCellBlock!(cell!, item)
+            if let myConfigureCellBlock = configureCellBlock {
+                myConfigureCellBlock(cell!, item)
+            }
         }
         return cell!
     }

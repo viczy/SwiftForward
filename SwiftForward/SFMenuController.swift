@@ -6,18 +6,17 @@
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
-import UIKit
 import Cartography
 
 enum MenuIndex:Int {
-    case Refresh = 0, HUD, Alamofire, Realm
+    case Refresh = 0, HUD, Alamofire, Realm, CollectionView
 }
 
 class SFMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    private var menuArray: NSArray!
-    private var tableView: UITableView!
-    private var arrayDataSource: SFArrayDataSource!
+    let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView"]
+    let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+    private var arrayDataSource:SFArrayDataSource?
 
     //MARK:Init
     override init() {
@@ -34,40 +33,30 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 
     //MARK:Load&Appear
     override func loadView() {
-        self.propertyInit()
         super.loadView()
-        tableViewLayout()
+        self.setUpView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    //MARK:Property Init
-    private func propertyInit() {
-        //menuArray
-        menuArray = ["Refresh", "HUD", "Alamofire", "Realm"]
-
+    //MARK:SetUP View
+    private func setUpView() {
         //tableView
-        tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
-        var configureBlock:CellConfigureBlock = configureCell
         let identifier = "menuIdentifier"
-        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureBlock)
+        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock:configureCell)
         tableView.dataSource = arrayDataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
-    }
-
-    func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
-        aCell.textLabel?.text = aItem as? String
-    }
-
-    //MARK:Layout
-    private func tableViewLayout() {
         self.view.addSubview(tableView)
         layout(tableView) { view in
             view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
         }
+    }
+
+    func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
+        aCell.textLabel?.text = aItem as? String
     }
 
     //MARK:UITableViewDelegate
@@ -82,12 +71,14 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
             case .HUD:
                 controller = SFHUDListController()
 
-
             case .Alamofire:
                 return
                 
             case .Realm:
                 return
+
+            case .CollectionView:
+                controller = SFCollectionController()
 
             }
         }
@@ -101,6 +92,5 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
 

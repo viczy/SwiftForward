@@ -15,11 +15,10 @@ enum HUDIndex:Int {
 
 class SFHUDListController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    private var menuArray: NSArray!
-    private var arrayDataSource: SFArrayDataSource!
-
-    private var tableView: UITableView!
-    private var dimissButtonItem: UIBarButtonItem!
+    let menuArray: Array<String> = ["Normal", "Progress", "Success"]
+    let dismissButtonItem: UIBarButtonItem = UIBarButtonItem(title: "dismiss", style: UIBarButtonItemStyle.Done, target: nil, action: "dismissHUD")
+    let tableView: UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+    private var arrayDataSource:SFArrayDataSource?
 
     //MARK:Init
     override init() {
@@ -36,10 +35,8 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
 
     //MARK:Load&Appear
     override func loadView() {
-        self.propertyInit()
         super.loadView()
-        navigationItem.rightBarButtonItem = dimissButtonItem
-        tableViewLayout()
+        self.setUpView()
     }
 
     override func viewDidLoad() {
@@ -47,37 +44,28 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
     }
 
     //MARK:Property Init
-    private func propertyInit() {
-        //menuArray
-        menuArray = ["Normal", "Progress", "Success"]
-
+    private func setUpView() {
         //tableView
-        tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
-        var configureBlock:CellConfigureBlock = configureCell
         let identifier = "refreshListIdentifier"
-        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureBlock)
+        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureCell)
         tableView.dataSource = arrayDataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
-
-        //dimissButtonItem
-        dimissButtonItem = UIBarButtonItem(title: "dismiss", style: UIBarButtonItemStyle.Done, target: self, action:"dismissHUD")
+        self.view.addSubview(tableView)
+        layout(tableView) { view in
+            view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
+        }
+        //rightbarbuttonitem
+        dismissButtonItem.target = self
+        self.navigationItem.rightBarButtonItem = dismissButtonItem
     }
 
     func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
         aCell.textLabel?.text = aItem as? String
     }
 
-    //MARK:Layout
-    private func tableViewLayout() {
-        self.view.addSubview(tableView)
-        layout(tableView) { view in
-            view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
-        }
-    }
-
-    private func dismissHUD() {
-        SVProgressHUD.popActivity()
+    func dismissHUD() {
+        SVProgressHUD.dismiss()
     }
 
     //MARK:UITableViewDelegate
