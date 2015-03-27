@@ -14,9 +14,9 @@ enum RefreshIndex:Int {
 
 class SFRefreshListController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    let menuArray: Array<String> = ["Refresh", "More", "All", "None"]
+    let refreshArray: Array<String> = ["Refresh", "More", "All", "None"]
     let tableView: UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
-    private var arrayDataSource:SFArrayDataSource?
+    private var dataSource:SFArrayDataSource?
 
     //MARK:Init
     override init() {
@@ -41,11 +41,11 @@ class SFRefreshListController: SFBaseController, UITableViewDelegate {
         super.viewDidLoad()
     }
 
-    //MARK:Property Init
+    //MARK:SetUP View
     private func setUpView() {
         let identifier = "refreshListIdentifier"
-        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureCell)
-        tableView.dataSource = arrayDataSource
+        dataSource = SFArrayDataSource(items: refreshArray, cellIdentifier: identifier, configureCellBlock: configureCell)
+        tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
         self.view.addSubview(tableView)
@@ -65,7 +65,7 @@ class SFRefreshListController: SFBaseController, UITableViewDelegate {
         if let index = RefreshIndex(rawValue: indexPath.row) {
             switch index {
             case .Refresh:
-                controller = SFRefreshListController()
+                return
 
             case .More:
                 return

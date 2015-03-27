@@ -12,7 +12,7 @@ typealias CollectionCellConfigureBlock = (UICollectionViewCell, AnyObject) -> Vo
 
 class SFCollectionDataSource: NSObject, UICollectionViewDataSource {
     //MARK:Property
-    var items:NSArray?
+    var items:Array<AnyObject>?
     var cellIdentifier:String?
     var configureCellBlock:CollectionCellConfigureBlock?
 
@@ -30,7 +30,10 @@ class SFCollectionDataSource: NSObject, UICollectionViewDataSource {
 
     //UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items!.count
+        if let myItems = items {
+            return myItems.count
+        }
+        return 0
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -38,7 +41,9 @@ class SFCollectionDataSource: NSObject, UICollectionViewDataSource {
 
         if let myItems = items {
             var item:AnyObject = myItems[indexPath.row]
-            configureCellBlock!(cell!, item)
+            if let myConfigureCellBlock = configureCellBlock {
+                myConfigureCellBlock(cell!, item)
+            }
         }
         return cell!
     }

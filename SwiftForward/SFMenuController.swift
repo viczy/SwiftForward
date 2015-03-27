@@ -16,7 +16,7 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property
     let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView"]
     let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
-    private var arrayDataSource:SFArrayDataSource?
+    private var dataSource:SFArrayDataSource?
 
     //MARK:Init
     override init() {
@@ -45,8 +45,8 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     private func setUpView() {
         //tableView
         let identifier = "menuIdentifier"
-        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock:configureCell)
-        tableView.dataSource = arrayDataSource
+        dataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock:configureCell)
+        tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
         self.view.addSubview(tableView)

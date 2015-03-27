@@ -12,6 +12,9 @@
 //OpenUDID
 #import<OpenUDID/OpenUDID.h>
 
+//SDWebImage
+#import<SDWebImage/UIImageView+WebCache.h>
+
 
 
 

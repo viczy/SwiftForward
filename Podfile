@@ -32,4 +32,7 @@ pod 'SVProgressHUD', :head
 ##refresh
 pod 'CBStoreHouseRefreshControl'
 
+##NetImageView
+pod 'SDWebImage'
+
 

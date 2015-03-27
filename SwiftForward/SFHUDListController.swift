@@ -15,10 +15,10 @@ enum HUDIndex:Int {
 
 class SFHUDListController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    let menuArray: Array<String> = ["Normal", "Progress", "Success"]
+    let hudArray: Array<String> = ["Normal", "Progress", "Success"]
     let dismissButtonItem: UIBarButtonItem = UIBarButtonItem(title: "dismiss", style: UIBarButtonItemStyle.Done, target: nil, action: "dismissHUD")
     let tableView: UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
-    private var arrayDataSource:SFArrayDataSource?
+    private var dataSource:SFArrayDataSource?
 
     //MARK:Init
     override init() {
@@ -43,12 +43,12 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
         super.viewDidLoad()
     }
 
-    //MARK:Property Init
+    //MARK:SetUP View
     private func setUpView() {
         //tableView
-        let identifier = "refreshListIdentifier"
-        arrayDataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock: configureCell)
-        tableView.dataSource = arrayDataSource
+        let identifier = "hudListIdentifier"
+        dataSource = SFArrayDataSource(items: hudArray, cellIdentifier: identifier, configureCellBlock: configureCell)
+        tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
         self.view.addSubview(tableView)

@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import Cartography
 
 class SFCollectionController: SFBaseController {
+    //MARK:Property
+    let collectArray: Array<String> = ["image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image"]
     let collectionView:UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+
+    private var dataSource:SFCollectionDataSource?
 
     //MARK:Init
     override init() {
@@ -34,9 +39,26 @@ class SFCollectionController: SFBaseController {
         super.viewDidLoad()
     }
 
-    //MARK:setUpView
-    func setUpView() {
-        //
+    //MARK:Property Init
+    private func setUpView() {
+        //tableView
+        let identifier = "collectionIdentifier"
+        dataSource = SFCollectionDataSource(items: collectArray, cellIdentifier: identifier, configureCellBlock: configureCell)
+        collectionView.dataSource = dataSource
+        collectionView.backgroundColor = UIColor.whiteColor()
+//        collectionView.delegate = self
+        collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: identifier)
+        self.view.addSubview(collectionView)
+        layout(collectionView) { view in
+            view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
+        }
+    }
+
+    func configureCell(aCell:UICollectionViewCell, aItem:AnyObject) {
+        let imageView = UIImageView(frame: aCell.bounds)
+        let url = NSURL(string: "http://img.bz1111.com/d3/2009-5/200905120037292250.jpg")
+        imageView.sd_setImageWithURL(url)
+        aCell.backgroundView = imageView
     }
 
 }
