@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B1036F80834ACA9CAAE2E9D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF91777C66CA8B3AEA3A477 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */; };
+		F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */; };
 		F98ABBB11AB2CC1200D02519 /* SFBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98ABBB01AB2CC1200D02519 /* SFBaseController.swift */; };
 		F9B293D51AB826150066AEFC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9B293D41AB826150066AEFC /* Default-568h@2x.png */; };
 		F9BE35401AC3A6BB005A7F11 /* SFCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE353F1AC3A6BB005A7F11 /* SFCollectionController.swift */; };
@@ -25,6 +26,7 @@
 		53E7FB5DF96B3FFB23B50BE5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6FF91777C66CA8B3AEA3A477 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFArrayDataSource.swift; sourceTree = "<group>"; };
+		F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFCollectionLayout.swift; sourceTree = "<group>"; };
 		F98ABBB01AB2CC1200D02519 /* SFBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFBaseController.swift; sourceTree = "<group>"; };
 		F98ABBB21AB2DCE200D02519 /* SwiftForward-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftForward-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9B293D41AB826150066AEFC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -89,12 +91,21 @@
 		F91506821AB2C49600A89742 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F9233EA71AC925B5009AD3EF /* CollectionView */,
 				F9E9333E1AB00A0B00C5B494 /* SFMenuController.swift */,
 				F9E6D3491ABA73C50059338E /* SFRefreshListController.swift */,
 				F9E6D34C1ABAA1830059338E /* SFHUDListController.swift */,
 				F9BE353F1AC3A6BB005A7F11 /* SFCollectionController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F9233EA71AC925B5009AD3EF /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		F98ABBAF1AB2CBF100D02519 /* Custom */ = {
@@ -278,6 +289,7 @@
 			files = (
 				F9E9333F1AB00A0B00C5B494 /* SFMenuController.swift in Sources */,
 				F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */,
+				F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */,
 				F9E6D34A1ABA73C50059338E /* SFRefreshListController.swift in Sources */,
 				F9E9333D1AB00A0B00C5B494 /* AppDelegate.swift in Sources */,
 				F9E6D34D1ABAA1830059338E /* SFHUDListController.swift in Sources */,

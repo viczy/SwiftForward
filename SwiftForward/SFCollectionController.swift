@@ -12,7 +12,7 @@ import Cartography
 class SFCollectionController: SFBaseController {
     //MARK:Property
     let collectArray: Array<String> = ["image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image"]
-    let collectionView:UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+    let collectionView:UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: SFCollectionLayout())
 
     private var dataSource:SFCollectionDataSource?
 
@@ -41,7 +41,7 @@ class SFCollectionController: SFBaseController {
 
     //MARK:Property Init
     private func setUpView() {
-        //tableView
+        //collectionView
         let identifier = "collectionIdentifier"
         dataSource = SFCollectionDataSource(items: collectArray, cellIdentifier: identifier, configureCellBlock: configureCell)
         collectionView.dataSource = dataSource
