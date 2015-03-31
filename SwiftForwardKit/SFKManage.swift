@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Realm
 
 struct SFKManager {
     enum Router {
@@ -31,7 +32,10 @@ struct SFKManager {
 }
 
 extension SFKManager {
-    func storeMenu() {
-
+    static func store(object anObject: SFKBaseObject) {
+        let realm = RLMRealm.defaultRealm()
+        realm.beginWriteTransaction()
+        realm.addObject(anObject)
+        realm.commitWriteTransaction()
     }
 }

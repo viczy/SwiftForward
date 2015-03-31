@@ -9,12 +9,18 @@
 import Foundation
 
 class SFKMenu: SFKBaseObject {
-    dynamic var title:String?
-    dynamic var desc:String?
+    dynamic var title:String = ""
+    dynamic var desc:String = ""
 
     override func translateWithAttribute(attribute anAttribute:Dictionary<String, AnyObject>) {
         super.translateWithAttribute(attribute: anAttribute)
-        title = anAttribute["title"] as? String
-        desc = anAttribute["desc"] as? String
+        let titleOp = anAttribute["title"] as? String
+        if let myTitle = titleOp {
+            title = myTitle
+        }
+        let descOp = anAttribute["desc"] as? String
+        if let myDesc = descOp {
+            desc = myDesc
+        }
     }
 }

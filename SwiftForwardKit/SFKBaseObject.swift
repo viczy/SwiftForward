@@ -12,9 +12,11 @@ import Realm
 class SFKBaseObject: RLMObject {
     dynamic var id = 0
 
-
     func translateWithAttribute(attribute anAttribute:Dictionary<String, AnyObject>) {
-        id = anAttribute["id"] as Int
+        let idOp = anAttribute["id"] as? Int
+        if let myId = idOp {
+            id = myId as Int
+        }
     }
 
     override class func primaryKey() -> String! {

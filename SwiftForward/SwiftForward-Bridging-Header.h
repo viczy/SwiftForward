@@ -18,6 +18,7 @@
 //Realm
 #import<Realm/Realm.h>
 #import<Realm/RLMObject.h>
+#import<Realm/RLMRealm.h>
 
 
 
