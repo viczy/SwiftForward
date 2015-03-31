@@ -15,6 +15,10 @@
 //SDWebImage
 #import<SDWebImage/UIImageView+WebCache.h>
 
+//Realm
+#import<Realm/Realm.h>
+#import<Realm/RLMObject.h>
+
 
 
 

@@ -31,6 +31,11 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
+    convenience init(abc: String) {
+        self.init(nibName: nil, bundle: nil)
+
+    }
+
     //MARK:Load&Appear
     override func loadView() {
         super.loadView()
