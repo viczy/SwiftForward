@@ -127,11 +127,19 @@
 		F99674E81ABACEB80075780C /* SwiftForwardKit */ = {
 			isa = PBXGroup;
 			children = (
+				F9B833FC1ACBEF3300B9A9FE /* Test */,
 				F95203BC1ACA3DF100E49CC0 /* SFKMenu.swift */,
 				F95203BE1ACA41A900E49CC0 /* SFKManage.swift */,
 				F95203C11ACA4E0500E49CC0 /* SFKBaseObject.swift */,
 			);
 			path = SwiftForwardKit;
+			sourceTree = "<group>";
+		};
+		F9B833FC1ACBEF3300B9A9FE /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 		F9E9332E1AB00A0B00C5B494 = {
