@@ -50,7 +50,6 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 //        if let myMenu = menu {
 //            SFKManager.store(object: myMenu)
 //        }
-
     }
 
     //MARK:SetUP View
