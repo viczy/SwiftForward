@@ -45,11 +45,11 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //sfkmanager
-//        let menuDic = ["title":"menu"]
-//        let menu = SFKManager.Router.menu.translate(attribute: menuDic)
-//        if let myMenu = menu {
-//            SFKManager.store(object: myMenu)
-//        }
+        let menuDic = ["title":"menu"]
+        let menu = SFKManager.Router.menu.translate(attribute: menuDic)
+        if let myMenu = menu {
+            SFKManager.store(object: myMenu)
+        }
     }
 
     //MARK:SetUP View
