@@ -9,12 +9,12 @@
 import Cartography
 
 enum MenuIndex:Int {
-    case Refresh = 0, HUD, Alamofire, Realm, CollectionView
+    case Refresh = 0, HUD, Alamofire, Realm, CollectionView, NotificationCenter
 }
 
 class SFMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView"]
+    let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView", "NotificationCenter"]
     let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
     private var dataSource:SFArrayDataSource?
 
@@ -31,11 +31,6 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
-    convenience init(abc: String) {
-        self.init(nibName: nil, bundle: nil)
-
-    }
-
     //MARK:Load&Appear
     override func loadView() {
         super.loadView()
@@ -44,12 +39,6 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //sfkmanager
-        let menuDic = ["title":"menu"]
-        let menu = SFKManager.Router.menu.translate(attribute: menuDic)
-        if let myMenu = menu {
-            SFKManager.store(object: myMenu)
-        }
     }
 
     //MARK:SetUP View
@@ -86,11 +75,13 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
                 return
                 
             case .Realm:
-                return
+                controller = SFRealmController()
 
             case .CollectionView:
                 controller = SFCollectionController()
 
+            case .NotificationCenter:
+                controller = SFNotifcationCenterController()
             }
         }
         if let myController = controller {

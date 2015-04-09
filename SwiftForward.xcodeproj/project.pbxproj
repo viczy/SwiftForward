@@ -10,6 +10,8 @@
 		4B1036F80834ACA9CAAE2E9D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF91777C66CA8B3AEA3A477 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */; };
 		F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */; };
+		F94A1E741AD611F400B1C274 /* SFNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */; };
+		F94A1E761AD613DC00B1C274 /* SFRealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E751AD613DC00B1C274 /* SFRealmController.swift */; };
 		F95203BD1ACA3DF100E49CC0 /* SFKMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95203BC1ACA3DF100E49CC0 /* SFKMenu.swift */; };
 		F95203BF1ACA41A900E49CC0 /* SFKManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95203BE1ACA41A900E49CC0 /* SFKManage.swift */; };
 		F95203C21ACA4E0500E49CC0 /* SFKBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95203C11ACA4E0500E49CC0 /* SFKBaseObject.swift */; };
@@ -30,6 +32,8 @@
 		6FF91777C66CA8B3AEA3A477 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFArrayDataSource.swift; sourceTree = "<group>"; };
 		F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFCollectionLayout.swift; sourceTree = "<group>"; };
+		F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFNotificationCenterController.swift; sourceTree = "<group>"; };
+		F94A1E751AD613DC00B1C274 /* SFRealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFRealmController.swift; sourceTree = "<group>"; };
 		F95203BC1ACA3DF100E49CC0 /* SFKMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKMenu.swift; sourceTree = "<group>"; };
 		F95203BE1ACA41A900E49CC0 /* SFKManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKManage.swift; sourceTree = "<group>"; };
 		F95203C11ACA4E0500E49CC0 /* SFKBaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKBaseObject.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				F9E6D3491ABA73C50059338E /* SFRefreshListController.swift */,
 				F9E6D34C1ABAA1830059338E /* SFHUDListController.swift */,
 				F9BE353F1AC3A6BB005A7F11 /* SFCollectionController.swift */,
+				F94A1E751AD613DC00B1C274 /* SFRealmController.swift */,
+				F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -310,10 +316,12 @@
 				F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */,
 				F95203C21ACA4E0500E49CC0 /* SFKBaseObject.swift in Sources */,
 				F9E6D34A1ABA73C50059338E /* SFRefreshListController.swift in Sources */,
+				F94A1E761AD613DC00B1C274 /* SFRealmController.swift in Sources */,
 				F9E9333D1AB00A0B00C5B494 /* AppDelegate.swift in Sources */,
 				F9E6D34D1ABAA1830059338E /* SFHUDListController.swift in Sources */,
 				F9BE35401AC3A6BB005A7F11 /* SFCollectionController.swift in Sources */,
 				F95203BF1ACA41A900E49CC0 /* SFKManage.swift in Sources */,
+				F94A1E741AD611F400B1C274 /* SFNotificationCenterController.swift in Sources */,
 				F98ABBB11AB2CC1200D02519 /* SFBaseController.swift in Sources */,
 				F9BE35431AC3B738005A7F11 /* SFCollectionDataSource.swift in Sources */,
 			);
