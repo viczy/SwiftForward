@@ -12,6 +12,7 @@
 		F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */; };
 		F94A1E741AD611F400B1C274 /* SFNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */; };
 		F94A1E761AD613DC00B1C274 /* SFRealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E751AD613DC00B1C274 /* SFRealmController.swift */; };
+		F94A1E781AD6732000B1C274 /* SFOperationQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E771AD6732000B1C274 /* SFOperationQueueController.swift */; };
 		F95203BD1ACA3DF100E49CC0 /* SFKMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95203BC1ACA3DF100E49CC0 /* SFKMenu.swift */; };
 		F95203BF1ACA41A900E49CC0 /* SFKManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95203BE1ACA41A900E49CC0 /* SFKManage.swift */; };
 		F95203C21ACA4E0500E49CC0 /* SFKBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95203C11ACA4E0500E49CC0 /* SFKBaseObject.swift */; };
@@ -34,6 +35,7 @@
 		F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFCollectionLayout.swift; sourceTree = "<group>"; };
 		F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFNotificationCenterController.swift; sourceTree = "<group>"; };
 		F94A1E751AD613DC00B1C274 /* SFRealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFRealmController.swift; sourceTree = "<group>"; };
+		F94A1E771AD6732000B1C274 /* SFOperationQueueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFOperationQueueController.swift; sourceTree = "<group>"; };
 		F95203BC1ACA3DF100E49CC0 /* SFKMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKMenu.swift; sourceTree = "<group>"; };
 		F95203BE1ACA41A900E49CC0 /* SFKManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKManage.swift; sourceTree = "<group>"; };
 		F95203C11ACA4E0500E49CC0 /* SFKBaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKBaseObject.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				F9BE353F1AC3A6BB005A7F11 /* SFCollectionController.swift */,
 				F94A1E751AD613DC00B1C274 /* SFRealmController.swift */,
 				F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */,
+				F94A1E771AD6732000B1C274 /* SFOperationQueueController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				F9E9333F1AB00A0B00C5B494 /* SFMenuController.swift in Sources */,
 				F95203BD1ACA3DF100E49CC0 /* SFKMenu.swift in Sources */,
+				F94A1E781AD6732000B1C274 /* SFOperationQueueController.swift in Sources */,
 				F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */,
 				F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */,
 				F95203C21ACA4E0500E49CC0 /* SFKBaseObject.swift in Sources */,

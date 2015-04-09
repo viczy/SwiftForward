@@ -9,12 +9,12 @@
 import Cartography
 
 enum MenuIndex:Int {
-    case Refresh = 0, HUD, Alamofire, Realm, CollectionView, NotificationCenter
+    case Refresh = 0, HUD, Alamofire, Realm, CollectionView, NotificationCenter, OperationQueue
 }
 
 class SFMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView", "NotificationCenter"]
+    let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView", "NotificationCenter", "OperationQueue"]
     let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
     private var dataSource:SFArrayDataSource?
 
@@ -82,6 +82,9 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 
             case .NotificationCenter:
                 controller = SFNotifcationCenterController()
+
+            case .OperationQueue:
+                controller = SFOperationQueueController()
             }
         }
         if let myController = controller {
