@@ -9,6 +9,24 @@
 import Foundation
 
 class SFOperationQueueController: SFBaseController {
+
+    private let mainQueue = NSOperationQueue.mainQueue()
+
+    private let operationBlock = NSBlockOperation { () -> Void in
+        println("current thread------\(NSThread.currentThread())")
+    }
+
+    private let operationSF = SFOperation { () -> Void in
+        println("current thread------\(NSThread.currentThread())")
+    }
+
+    lazy var customQueue:NSOperationQueue = {
+            var custom = NSOperationQueue()
+            custom.maxConcurrentOperationCount = 10
+            return custom
+        }()
+
+
     //MARK:Init
     override init() {
         super.init()
@@ -30,11 +48,32 @@ class SFOperationQueueController: SFBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mainQueueBlock()
+//        self.customQueueBlock()
+//        self.mainQueueSF()
+//        self.customQueueSF()
     }
 
     //MARK:SetUP View
     private func setUpView() {
         //
+    }
+
+    //MARK:Actions Private
+    func mainQueueBlock() {
+        mainQueue.addOperation(operationBlock)
+    }
+
+    func customQueueBlock() {
+        customQueue.addOperation(operationBlock)
+    }
+
+    func mainQueueSF() {
+        mainQueue.addOperation(operationSF)
+    }
+
+    func customQueueSF() {
+        customQueue.addOperation(operationSF)
     }
 
     //MARK:MemoryWarning
