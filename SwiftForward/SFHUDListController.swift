@@ -21,10 +21,6 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
     private var dataSource:SFArrayDataSource?
 
     //MARK:Init
-    override init() {
-        super.init()
-    }
-
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

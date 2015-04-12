@@ -14,10 +14,6 @@ class SFGCDController: SFBaseController {
     let syncQueue = dispatch_queue_create("com.sf.gcd", DISPATCH_QUEUE_SERIAL)
 
     //MARK:Init
-    override init() {
-        super.init()
-    }
-
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

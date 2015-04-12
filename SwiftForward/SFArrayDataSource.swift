@@ -21,7 +21,7 @@ class SFArrayDataSource: NSObject, UITableViewDataSource {
     }
 
     //MARK:Init
-    convenience init(items anItems:NSArray?, cellIdentifier aCellidentifier:String?, configureCellBlock aConfigureCellBlock:TableCellConfigureBlock?) {
+    convenience init(items anItems:Array<AnyObject>?, cellIdentifier aCellidentifier:String?, configureCellBlock aConfigureCellBlock:TableCellConfigureBlock?) {
         self.init();
         self.items = anItems
         self.cellIdentifier = aCellidentifier

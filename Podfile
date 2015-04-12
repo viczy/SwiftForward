@@ -9,19 +9,19 @@ use_frameworks!
 inhibit_all_warnings!
 
 ## AutoLayout
-pod 'Cartography'
+pod 'Cartography', :git =>  'git@github.com:robb/Cartography.git'
 
 ##Net
-pod 'Alamofire', '~> 1.1'
+pod 'Alamofire', :git => 'git@github.com:Alamofire/Alamofire.git'
 
 ##Data
 pod 'Realm', '~> 0.90.6'
 
 ##Json
-pod 'SwiftyJSON', '>= 2.1.3'
+pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'xcode6.3'
 
 ##animations
-pod 'Spring', '~> 1.0.1'
+pod 'Spring', :git => 'git@github.com:MengTo/Spring.git'
 
 ##UDID
 pod 'OpenUDID'
