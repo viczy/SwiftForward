@@ -15,7 +15,7 @@ enum AFMenuIndex:Int {
 
 class SFAlamoFireMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    let menuArray = ["List", "Compose", "UPdate"]
+    let menuArray = ["List", "Compose", "Update"]
     let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
     private var dataSource:SFArrayDataSource?
 
@@ -63,17 +63,17 @@ class SFAlamoFireMenuController: SFBaseController, UITableViewDelegate {
         if let index = AFMenuIndex(rawValue: indexPath.row) {
             switch index {
             case .List:
-                return
+                controller = SFTopicListController()
 
             case .Compose:
-                return
+                controller = SFTopicComposeController()
 
             case .Update:
-                return
+                controller = SFTopicUpdateController()
             }
-
         }
         if let myController = controller {
+            controller?.title = menuArray[indexPath.row]
             self.navigationController?.pushViewController(myController, animated: true)
         }
     }

@@ -35,6 +35,7 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Menu"
     }
 
     //MARK:SetUP View
@@ -92,6 +93,7 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 
         }
         if let myController = controller {
+            controller?.title = menuArray[indexPath.row]
             self.navigationController?.pushViewController(myController, animated: true)
         }
     }
