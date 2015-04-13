@@ -27,7 +27,7 @@ class SFGCDController: SFBaseController {
         super.loadView()
         self.setUpView()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.syncQueueGroup()
