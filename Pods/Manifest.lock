@@ -6,10 +6,10 @@ PODS:
   - Realm (0.90.6):
     - Realm/Headers (= 0.90.6)
   - Realm/Headers (0.90.6)
-  - SDWebImage (3.7.2):
-    - SDWebImage/Core (= 3.7.2)
-  - SDWebImage/Core (3.7.2)
-  - Spring (1.0.2)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+  - Spring (1.0.3)
   - SVProgressHUD (HEAD based on 1.1.2)
   - SwiftyJSON (2.1.3)
 
@@ -43,7 +43,7 @@ CHECKOUT OPTIONS:
     :commit: c64b6dbef6bb085784c20c3b40165df1ec993779
     :git: git@github.com:robb/Cartography.git
   Spring:
-    :commit: c51c19224cc717a4fb8980a22782892a88d08508
+    :commit: e4c8c09b96b68d1bc6dc64f3c388f018748ad33a
     :git: git@github.com:MengTo/Spring.git
   SwiftyJSON:
     :commit: 008a09d7ea8b13c03fb59b35c01aad339584a5e1
@@ -55,9 +55,9 @@ SPEC CHECKSUMS:
   CBStoreHouseRefreshControl: 3c67731fe57aff3ccd2a151c9d13a6f2aed8a11e
   OpenUDID: 5a23b7477755efc2d7871b57aa79ba3089c40b74
   Realm: 6c3facc11964ab9f828f47de6d0e9bf9c4d9c818
-  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
-  Spring: b9c8a315befd509c531701f2edc4405ab9d00bad
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
   SwiftyJSON: a561c2a840121085bec8a2dfeac97a360fc66901
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.36.0

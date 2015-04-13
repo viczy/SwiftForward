@@ -10,6 +10,8 @@
 		4B1036F80834ACA9CAAE2E9D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF91777C66CA8B3AEA3A477 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */; };
 		F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */; };
+		F94800ED1ADB695900F554FE /* SFJavaScriptCoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94800EC1ADB695900F554FE /* SFJavaScriptCoreController.swift */; };
+		F94800EF1ADB6A5100F554FE /* SFAlamoFireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94800EE1ADB6A5100F554FE /* SFAlamoFireController.swift */; };
 		F94A1E741AD611F400B1C274 /* SFNotificationCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */; };
 		F94A1E761AD613DC00B1C274 /* SFRealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E751AD613DC00B1C274 /* SFRealmController.swift */; };
 		F94A1E781AD6732000B1C274 /* SFOperationQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A1E771AD6732000B1C274 /* SFOperationQueueController.swift */; };
@@ -35,6 +37,8 @@
 		6FF91777C66CA8B3AEA3A477 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFArrayDataSource.swift; sourceTree = "<group>"; };
 		F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFCollectionLayout.swift; sourceTree = "<group>"; };
+		F94800EC1ADB695900F554FE /* SFJavaScriptCoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFJavaScriptCoreController.swift; sourceTree = "<group>"; };
+		F94800EE1ADB6A5100F554FE /* SFAlamoFireController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFAlamoFireController.swift; sourceTree = "<group>"; };
 		F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFNotificationCenterController.swift; sourceTree = "<group>"; };
 		F94A1E751AD613DC00B1C274 /* SFRealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFRealmController.swift; sourceTree = "<group>"; };
 		F94A1E771AD6732000B1C274 /* SFOperationQueueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFOperationQueueController.swift; sourceTree = "<group>"; };
@@ -113,10 +117,12 @@
 				F9E6D3491ABA73C50059338E /* SFRefreshListController.swift */,
 				F9E6D34C1ABAA1830059338E /* SFHUDListController.swift */,
 				F9BE353F1AC3A6BB005A7F11 /* SFCollectionController.swift */,
+				F94800EE1ADB6A5100F554FE /* SFAlamoFireController.swift */,
 				F94A1E751AD613DC00B1C274 /* SFRealmController.swift */,
 				F94A1E731AD611F400B1C274 /* SFNotificationCenterController.swift */,
 				F94A1E771AD6732000B1C274 /* SFOperationQueueController.swift */,
 				F9DAAC221AD7730500413087 /* SFGCDController.swift */,
+				F94800EC1ADB695900F554FE /* SFJavaScriptCoreController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -337,6 +343,8 @@
 				F9E6D34A1ABA73C50059338E /* SFRefreshListController.swift in Sources */,
 				F94A1E761AD613DC00B1C274 /* SFRealmController.swift in Sources */,
 				F9E9333D1AB00A0B00C5B494 /* AppDelegate.swift in Sources */,
+				F94800ED1ADB695900F554FE /* SFJavaScriptCoreController.swift in Sources */,
+				F94800EF1ADB6A5100F554FE /* SFAlamoFireController.swift in Sources */,
 				F9E6D34D1ABAA1830059338E /* SFHUDListController.swift in Sources */,
 				F9BE35401AC3A6BB005A7F11 /* SFCollectionController.swift in Sources */,
 				F9DAAC231AD7730500413087 /* SFGCDController.swift in Sources */,
