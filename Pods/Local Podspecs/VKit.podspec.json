@@ -1,0 +1,19 @@
+{
+  "name": "VKit",
+  "version": "0.1.0",
+  "summary": "A common kit",
+  "homepage": "https://github.com/viczy/VKit",
+  "license": "MIT",
+  "authors": {
+    "vic": "viczy@ymail.com"
+  },
+  "source": {
+    "git": "https://github.com/viczy/VKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "VKit/*.{h,swift}",
+  "requires_arc": true
+}

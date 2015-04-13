@@ -1,23 +1,22 @@
 //
-//  SFHUDController.swift
+//  SFAlamoFireController.swift
 //  SwiftForward
 //
-//  Created by Vic Zhou on 3/19/15.
+//  Created by Vic Zhou on 4/13/15.
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
+import Foundation
 import Cartography
-import SVProgressHUD
 
-enum HUDIndex:Int {
-    case Normal = 0, Progress, Success, Failure
+enum AFMenuIndex:Int {
+    case List = 0, Compose, Update
 }
 
-class SFHUDListController: SFBaseController, UITableViewDelegate {
+class SFAlamoFireMenuController: SFBaseController, UITableViewDelegate {
     //MARK:Property
-    let hudArray: Array<String> = ["Normal", "Progress", "Success", "Failure"]
-    let dismissButtonItem: UIBarButtonItem = UIBarButtonItem(title: "dismiss", style: UIBarButtonItemStyle.Done, target: nil, action: "dismissHUD")
-    let tableView: UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+    let menuArray = ["List", "Compose", "UPdate"]
+    let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
     private var dataSource:SFArrayDataSource?
 
     //MARK:Init
@@ -42,8 +41,8 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
     //MARK:SetUP View
     private func setUpView() {
         //tableView
-        let identifier = "hudListIdentifier"
-        dataSource = SFArrayDataSource(items: hudArray, cellIdentifier: identifier, configureCellBlock: configureCell)
+        let identifier = "menuIdentifier"
+        dataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock:configureCell)
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
@@ -51,40 +50,28 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
         layout(tableView) { view in
             view.edges == inset(view.superview!.edges, 0, 0, 0, 0); return
         }
-        //rightbarbuttonitem
-        dismissButtonItem.target = self
-        self.navigationItem.rightBarButtonItem = dismissButtonItem
-
-        //svprogresshud
-//        SVProgressHUD.setBackgroundColor(UIColor(rgba:"#cccccc"))
     }
 
     func configureCell(aCell:UITableViewCell, aItem:AnyObject) {
         aCell.textLabel?.text = aItem as? String
     }
 
-    func dismissHUD() {
-        SVProgressHUD.dismiss()
-    }
-
     //MARK:UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var controller:SFBaseController?
-        if let index = HUDIndex(rawValue: indexPath.row) {
+        if let index = AFMenuIndex(rawValue: indexPath.row) {
             switch index {
-            case .Normal:
-                SVProgressHUD.show()
+            case .List:
+                return
 
-            case .Progress:
-                SVProgressHUD.showProgress(0.5)
+            case .Compose:
+                return
 
-            case .Success:
-                SVProgressHUD.showSuccessWithStatus("SUCCESS")
-
-            case .Failure:
-                SVProgressHUD.showErrorWithStatus("ERROR")
+            case .Update:
+                return
             }
+
         }
         if let myController = controller {
             self.navigationController?.pushViewController(myController, animated: true)
@@ -96,4 +83,5 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }

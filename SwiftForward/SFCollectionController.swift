@@ -11,8 +11,9 @@ import Cartography
 
 class SFCollectionController: SFBaseController {
     //MARK:Property
-    let collectArray: Array<String> = ["image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image"]
-    let collectionView:UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: SFCollectionLayout())
+    let collectArray: Array<String> = ["image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image", "image"]
+//    let collectionView:UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: SFCollectionLayout())
+    let collectionView:UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
 
     private var dataSource:SFCollectionDataSource?
 

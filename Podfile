@@ -35,4 +35,7 @@ pod 'CBStoreHouseRefreshControl'
 ##NetImageView
 pod 'SDWebImage'
 
+##CommonKit
+pod 'VKit', :git => 'git@github.com:viczy/VKit.git'
+
 

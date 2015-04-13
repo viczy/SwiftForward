@@ -1,5 +1,5 @@
 //
-//  SFAlamoFireController.swift
+//  SFTopicListController.swift
 //  SwiftForward
 //
 //  Created by Vic Zhou on 4/13/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SFAlamoFireController: SFBaseController {
+class SFTopicListController: SFBaseController {
     //MARK:Init
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -38,5 +38,4 @@ class SFAlamoFireController: SFBaseController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }

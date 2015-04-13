@@ -68,7 +68,7 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
                 controller = SFHUDListController()
 
             case .Alamofire:
-                controller = SFAlamoFireController()
+                controller = SFAlamoFireMenuController()
                 
             case .Realm:
                 controller = SFRealmController()
