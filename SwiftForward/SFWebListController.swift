@@ -1,21 +1,23 @@
 //
-//  ViewController.swift
+//  SFWebController.swift
 //  SwiftForward
 //
-//  Created by Vic Zhou on 3/11/15.
+//  Created by Vic Zhou on 4/14/15.
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
+import Foundation
 import Cartography
 
-enum MenuIndex:Int {
-    case Refresh = 0, HUD, Alamofire, Realm, CollectionView, NotificationCenter, OperationQueue, GCD, JavaScriptCore, Web
+enum WebIndex:Int {
+    case UIWebView=0, WKWebView
 }
 
-class SFMenuController: SFBaseController, UITableViewDelegate {
+
+class SFWebListController: SFBaseController, UITableViewDelegate{
     //MARK:Property
-    let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView", "NotificationCenter", "OperationQueue", "GCD", "JavaScriptCore", "Web"]
-    let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+    let webArray: Array<String> = ["UIWebView", "WKWebView"]
+    let tableView: UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
     private var dataSource:SFArrayDataSource?
 
     //MARK:Init
@@ -35,14 +37,12 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Menu"
     }
 
     //MARK:SetUP View
     private func setUpView() {
-        //tableView
         let identifier = "menuIdentifier"
-        dataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock:configureCell)
+        dataSource = SFArrayDataSource(items: webArray, cellIdentifier: identifier, configureCellBlock:configureCell)
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
@@ -56,47 +56,22 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         aCell.textLabel?.text = aItem as? String
     }
 
+    //MARK:UIWebViewDelegate
     //MARK:UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var controller:SFBaseController?
-        if let index = MenuIndex(rawValue: indexPath.row) {
+        if let index = WebIndex(rawValue: indexPath.row) {
             switch index {
-            case .Refresh:
-                controller = SFRefreshListController()
+            case .UIWebView:
+                return
 
-            case .HUD:
-                controller = SFHUDListController()
-
-            case .Alamofire:
-                controller = SFAlamoFireMenuController()
-                
-            case .Realm:
-                controller = SFRealmController()
-
-            case .CollectionView:
-                controller = SFCollectionController()
-
-            case .NotificationCenter:
-                controller = SFNotifcationCenterController()
-
-            case .OperationQueue:
-                controller = SFOperationQueueController()
-
-            case .GCD:
-                controller = SFGCDController()
-
-            case .JavaScriptCore:
-                controller = SFJavaScriptCoreController()
-
-            case .Web:
-                controller = SFWebListController()
+            case .WKWebView:
+                return
 
             }
-
         }
         if let myController = controller {
-            controller?.title = menuArray[indexPath.row]
             self.navigationController?.pushViewController(myController, animated: true)
         }
     }
@@ -107,4 +82,3 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 }
-

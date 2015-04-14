@@ -8,11 +8,14 @@
 
 import Foundation
 import Realm
+import Alamofire
+import SwiftyJSON
 
 struct SFKManager {
     enum Router {
         case menu
         case refresh
+        case topic
 
         func translate(attribute anAttribute:Dictionary<String, AnyObject>) -> SFKBaseObject? {
             switch self {
@@ -24,8 +27,10 @@ struct SFKManager {
             case .refresh:
                 return nil
 
-            default:return nil
-
+            case .topic:
+                let topicObject = SFKTopic()
+                topicObject.translateWithAttribute(attribute: anAttribute)
+                return topicObject
             }
         }
     }
@@ -37,5 +42,27 @@ extension SFKManager {
         realm.beginWriteTransaction()
         realm.addObject(anObject)
         realm.commitWriteTransaction()
+    }
+}
+
+extension SFKManager {
+     static func fetchTopics() {
+        Alamofire.request(.GET, "http:192.168.1.159:3000/topics.json").responseJSON() {
+            (_, _,data, _) in
+            let json = JSON(data!)
+            var topics = json.arrayObject
+            if let myTopics = topics {
+
+                let realm = RLMRealm.defaultRealm()
+                realm.beginWriteTransaction()
+
+                for topic in myTopics {
+                    var topicObject = self.Router.topic.translate(attribute: topic as! Dictionary)
+                    SFKTopic.createOrUpdateInRealm(realm, withObject: topicObject)
+                }
+
+                realm.commitWriteTransaction()
+            }
+        }
     }
 }

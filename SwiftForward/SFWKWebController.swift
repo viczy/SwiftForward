@@ -1,14 +1,14 @@
 //
-//  SFRealmController.swift
+//  SFWKWebController.swift
 //  SwiftForward
 //
-//  Created by Vic Zhou on 4/9/15.
+//  Created by Vic Zhou on 4/14/15.
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
 import Foundation
 
-class SFRealmController: SFBaseController {
+class SFWKWebController: SFBaseController {
     //MARK:Init
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -26,22 +26,11 @@ class SFRealmController: SFBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        println(documentsPath)
     }
 
     //MARK:SetUP View
     private func setUpView() {
         //
-    }
-
-    //MARK:Realm Test
-    private func storeToLocal() {
-        let menuDic = ["title":"menu"]
-        let menu = SFKManager.Router.menu.translate(attribute: menuDic)
-        if let myMenu = menu {
-            SFKManager.store(object: myMenu)
-        }
     }
 
     //MARK:MemoryWarning
