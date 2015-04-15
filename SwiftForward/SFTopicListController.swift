@@ -36,7 +36,6 @@ class SFTopicListController: SFBaseController, UITableViewDelegate {
         let token = realm.addNotificationBlock {[unowned self] note, realm  in
             self.tableView.reloadData()
         }
-//        SFKManager.fetchTopics()
         SFKTopicDataProvider.fetchTopics(1)
     }
 
