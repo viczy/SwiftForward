@@ -14,10 +14,12 @@ class SFKMenu: SFKBaseObject {
 
     override func translateWithAttribute(attribute anAttribute:Dictionary<String, AnyObject>) {
         super.translateWithAttribute(attribute: anAttribute)
+
         let titleOp = anAttribute["title"] as? String
         if let myTitle = titleOp {
             title = myTitle
         }
+
         let descOp = anAttribute["desc"] as? String
         if let myDesc = descOp {
             desc = myDesc

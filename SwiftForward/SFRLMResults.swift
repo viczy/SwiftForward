@@ -12,8 +12,8 @@ import Realm
 extension RLMResults {
     func toArray<T>(ofType: T.Type) -> [T] {
         var array = [T]()
-        for i in 0...self.count-1 {
-            var result: AnyObject! = self[i]
+        for i in 1...self.count {
+            var result: AnyObject! = self[(i-1)]
             if let result = result as? T {
                 array.append(result)
             }

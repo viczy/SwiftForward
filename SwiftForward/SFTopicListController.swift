@@ -36,7 +36,8 @@ class SFTopicListController: SFBaseController, UITableViewDelegate {
         let token = realm.addNotificationBlock {[unowned self] note, realm  in
             self.tableView.reloadData()
         }
-        SFKManager.fetchTopics()
+//        SFKManager.fetchTopics()
+        SFKTopicDataProvider.fetchTopics(1)
     }
 
     //MARK:SetUP View

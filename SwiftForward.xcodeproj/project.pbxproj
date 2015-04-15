@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4B1036F80834ACA9CAAE2E9D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF91777C66CA8B3AEA3A477 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F90582681ADE042E00B48C5F /* SFKAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90582671ADE042E00B48C5F /* SFKAlamofire.swift */; };
+		F905826A1ADE046C00B48C5F /* SFKTopicDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90582691ADE046C00B48C5F /* SFKTopicDataProvider.swift */; };
+		F905826C1ADE04AF00B48C5F /* SFKDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F905826B1ADE04AF00B48C5F /* SFKDomain.swift */; };
 		F90E38181ADCBCD30063B35D /* SFWebListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E38171ADCBCD30063B35D /* SFWebListController.swift */; };
 		F90E381B1ADCC71C0063B35D /* SFUIWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E381A1ADCC71C0063B35D /* SFUIWebController.swift */; };
 		F90E381D1ADCC73B0063B35D /* SFWKWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E381C1ADCC73B0063B35D /* SFWKWebController.swift */; };
@@ -44,6 +47,9 @@
 		3BB65EB36D628F44482DBC80 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		53E7FB5DF96B3FFB23B50BE5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6FF91777C66CA8B3AEA3A477 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F90582671ADE042E00B48C5F /* SFKAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKAlamofire.swift; sourceTree = "<group>"; };
+		F90582691ADE046C00B48C5F /* SFKTopicDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKTopicDataProvider.swift; sourceTree = "<group>"; };
+		F905826B1ADE04AF00B48C5F /* SFKDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKDomain.swift; sourceTree = "<group>"; };
 		F90E38171ADCBCD30063B35D /* SFWebListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFWebListController.swift; sourceTree = "<group>"; };
 		F90E381A1ADCC71C0063B35D /* SFUIWebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFUIWebController.swift; sourceTree = "<group>"; };
 		F90E381C1ADCC73B0063B35D /* SFWKWebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFWKWebController.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 		F99674E81ABACEB80075780C /* SwiftForwardKit */ = {
 			isa = PBXGroup;
 			children = (
+				F905826B1ADE04AF00B48C5F /* SFKDomain.swift */,
 				F9D69AAD1ADBBB5500B48041 /* Provider */,
 				F9D69AAC1ADBBB4A00B48041 /* Model */,
 			);
@@ -207,6 +214,8 @@
 		F9D69AAD1ADBBB5500B48041 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				F90582671ADE042E00B48C5F /* SFKAlamofire.swift */,
+				F90582691ADE046C00B48C5F /* SFKTopicDataProvider.swift */,
 			);
 			name = Provider;
 			sourceTree = "<group>";
@@ -392,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F905826C1ADE04AF00B48C5F /* SFKDomain.swift in Sources */,
 				F9E9333F1AB00A0B00C5B494 /* SFMenuController.swift in Sources */,
 				F95203BD1ACA3DF100E49CC0 /* SFKMenu.swift in Sources */,
 				F94A1E781AD6732000B1C274 /* SFOperationQueueController.swift in Sources */,
@@ -413,6 +423,7 @@
 				F9E6D34D1ABAA1830059338E /* SFHUDListController.swift in Sources */,
 				F9BE35401AC3A6BB005A7F11 /* SFCollectionController.swift in Sources */,
 				F9DAAC231AD7730500413087 /* SFGCDController.swift in Sources */,
+				F905826A1ADE046C00B48C5F /* SFKTopicDataProvider.swift in Sources */,
 				F90E38221ADD06350063B35D /* SFKTopic.swift in Sources */,
 				F95203BF1ACA41A900E49CC0 /* SFKManage.swift in Sources */,
 				F94A1E741AD611F400B1C274 /* SFNotificationCenterController.swift in Sources */,
@@ -420,6 +431,7 @@
 				F98ABBB11AB2CC1200D02519 /* SFBaseController.swift in Sources */,
 				F9BE35431AC3B738005A7F11 /* SFCollectionDataSource.swift in Sources */,
 				F90E38181ADCBCD30063B35D /* SFWebListController.swift in Sources */,
+				F90582681ADE042E00B48C5F /* SFKAlamofire.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

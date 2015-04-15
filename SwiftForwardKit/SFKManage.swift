@@ -46,10 +46,9 @@ extension SFKManager {
 }
 
 extension SFKManager {
-     static func fetchTopics() {
-        Alamofire.request(.GET, "http:192.168.1.159:3000/topics.json").responseJSON() {
-            (_, _,data, _) in
-            let json = JSON(data!)
+    static func saveTopics(data:AnyObject?) {
+        if let myData: AnyObject = data {
+            let json = JSON(myData)
             var topics = json.arrayObject
             if let myTopics = topics {
 
@@ -60,7 +59,7 @@ extension SFKManager {
                     var topicObject = self.Router.topic.translate(attribute: topic as! Dictionary)
                     SFKTopic.createOrUpdateInRealm(realm, withObject: topicObject)
                 }
-
+                
                 realm.commitWriteTransaction()
             }
         }
