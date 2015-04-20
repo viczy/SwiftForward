@@ -11,7 +11,7 @@ import Cartography
 
 
 class SFTopicListCell: UITableViewCell {
-    lazy var contrainerView:UIView = {
+    private lazy var contrainerView:UIView = {
         var view = UIView(frame: CGRectZero)
         return view
     }()

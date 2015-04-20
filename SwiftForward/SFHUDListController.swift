@@ -87,6 +87,7 @@ class SFHUDListController: SFBaseController, UITableViewDelegate {
             }
         }
         if let myController = controller {
+            controller?.title = hudArray[indexPath.row]
             self.navigationController?.pushViewController(myController, animated: true)
         }
     }

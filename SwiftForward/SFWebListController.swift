@@ -13,7 +13,6 @@ enum WebIndex:Int {
     case UIWebView=0, WKWebView
 }
 
-
 class SFWebListController: SFBaseController, UITableViewDelegate{
     //MARK:Property
     let webArray: Array<String> = ["UIWebView", "WKWebView"]
@@ -72,6 +71,7 @@ class SFWebListController: SFBaseController, UITableViewDelegate{
             }
         }
         if let myController = controller {
+            controller?.title = webArray[indexPath.row]
             self.navigationController?.pushViewController(myController, animated: true)
         }
     }

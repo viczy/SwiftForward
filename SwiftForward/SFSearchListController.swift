@@ -1,21 +1,21 @@
 //
-//  ViewController.swift
+//  SFSearchController.swift
 //  SwiftForward
 //
-//  Created by Vic Zhou on 3/11/15.
+//  Created by Vic Zhou on 4/20/15.
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
+import Foundation
 import Cartography
 
-enum MenuIndex:Int {
-    case Refresh = 0, HUD, Alamofire, Realm, CollectionView, NotificationCenter, OperationQueue, GCD, JavaScriptCore, Web, Search
+enum SearchIndex:Int {
+    case Search=0, SearchDisplay
 }
 
-class SFMenuController: SFBaseController, UITableViewDelegate {
-    //MARK:Property
-    let menuArray = ["Refresh", "HUD", "Alamofire", "Realm", "CollectionView", "NotificationCenter", "OperationQueue", "GCD", "JavaScriptCore", "Web", "Search"]
-    let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+class SFSearchListController: SFBaseController, UITableViewDelegate {
+    let searchArray = ["Search", "SearchDisplay"]
+    let tableView: UITableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
     private var dataSource:SFArrayDataSource?
 
     //MARK:Init
@@ -34,15 +34,15 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     }
 
     override func viewDidLoad() {
+        view.backgroundColor = UIColor.whiteColor()
         super.viewDidLoad()
-        title = "Menu"
     }
 
     //MARK:SetUP View
     private func setUpView() {
         //tableView
-        let identifier = "menuIdentifier"
-        dataSource = SFArrayDataSource(items: menuArray, cellIdentifier: identifier, configureCellBlock:configureCell)
+        let identifier = "searchIdentifier"
+        dataSource = SFArrayDataSource(items: searchArray, cellIdentifier: identifier, configureCellBlock:configureCell)
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: identifier)
@@ -60,46 +60,20 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var controller:UIViewController?
-        if let index = MenuIndex(rawValue: indexPath.row) {
+        if let index = SearchIndex(rawValue: indexPath.row) {
             switch index {
-            case .Refresh:
-                controller = SFRefreshListController()
-
-            case .HUD:
-                controller = SFHUDListController()
-
-            case .Alamofire:
-                controller = SFAlamoFireMenuController()
-                
-            case .Realm:
-                controller = SFRealmController()
-
-            case .CollectionView:
-                controller = SFCollectionController()
-
-            case .NotificationCenter:
-                controller = SFNotifcationCenterController()
-
-            case .OperationQueue:
-                controller = SFOperationQueueController()
-
-            case .GCD:
-                controller = SFGCDController()
-
-            case .JavaScriptCore:
-                controller = SFJavaScriptCoreController()
-
-            case .Web:
-                controller = SFWebListController()
-
             case .Search:
-                controller = SFSearchListController()
+                controller = SFSearchController()
+
+            case .SearchDisplay:
+                controller = SFSearchDisplayController()
             }
         }
         if let myController = controller {
-            controller?.title = menuArray[indexPath.row]
+            controller?.title = searchArray[indexPath.row]
             self.navigationController?.pushViewController(myController, animated: true)
         }
+
     }
 
     //MARK:MemoryWarning
@@ -108,4 +82,3 @@ class SFMenuController: SFBaseController, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 }
-

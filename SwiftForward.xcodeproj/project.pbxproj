@@ -18,6 +18,9 @@
 		F90E38221ADD06350063B35D /* SFKTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E38211ADD06350063B35D /* SFKTopic.swift */; };
 		F90E38241ADD1E3B0063B35D /* SFRLMResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E38231ADD1E3B0063B35D /* SFRLMResults.swift */; };
 		F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */; };
+		F913B69D1AE49F0200A9F402 /* SFSearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F913B69C1AE49F0200A9F402 /* SFSearchListController.swift */; };
+		F913B6A21AE4D6E900A9F402 /* SFSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F913B6A11AE4D6E900A9F402 /* SFSearchController.swift */; };
+		F913B6A41AE4DB1700A9F402 /* SFSearchDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F913B6A31AE4DB1700A9F402 /* SFSearchDisplayController.swift */; };
 		F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */; };
 		F94800ED1ADB695900F554FE /* SFJavaScriptCoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94800EC1ADB695900F554FE /* SFJavaScriptCoreController.swift */; };
 		F94800EF1ADB6A5100F554FE /* SFAlamoFireMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94800EE1ADB6A5100F554FE /* SFAlamoFireMenuController.swift */; };
@@ -57,6 +60,9 @@
 		F90E38211ADD06350063B35D /* SFKTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFKTopic.swift; sourceTree = "<group>"; };
 		F90E38231ADD1E3B0063B35D /* SFRLMResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFRLMResults.swift; sourceTree = "<group>"; };
 		F9136BBF1AB914AF00B26448 /* SFArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFArrayDataSource.swift; sourceTree = "<group>"; };
+		F913B69C1AE49F0200A9F402 /* SFSearchListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSearchListController.swift; sourceTree = "<group>"; };
+		F913B6A11AE4D6E900A9F402 /* SFSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSearchController.swift; sourceTree = "<group>"; };
+		F913B6A31AE4DB1700A9F402 /* SFSearchDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSearchDisplayController.swift; sourceTree = "<group>"; };
 		F9233EA81AC925E2009AD3EF /* SFCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFCollectionLayout.swift; sourceTree = "<group>"; };
 		F94800EC1ADB695900F554FE /* SFJavaScriptCoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFJavaScriptCoreController.swift; sourceTree = "<group>"; };
 		F94800EE1ADB6A5100F554FE /* SFAlamoFireMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFAlamoFireMenuController.swift; sourceTree = "<group>"; };
@@ -140,6 +146,15 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		F913B6A01AE4D69D00A9F402 /* SearchList */ = {
+			isa = PBXGroup;
+			children = (
+				F913B6A11AE4D6E900A9F402 /* SFSearchController.swift */,
+				F913B6A31AE4DB1700A9F402 /* SFSearchDisplayController.swift */,
+			);
+			name = SearchList;
+			sourceTree = "<group>";
+		};
 		F91506811AB2C48A00A89742 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +168,7 @@
 		F91506821AB2C49600A89742 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F913B6A01AE4D69D00A9F402 /* SearchList */,
 				F90E38191ADCC6F50063B35D /* WebList */,
 				F9D69AAE1ADBC0AC00B48041 /* AlamoFireMenu */,
 				F9DAAC241AD7758900413087 /* OperationQueue */,
@@ -168,6 +184,7 @@
 				F9DAAC221AD7730500413087 /* SFGCDController.swift */,
 				F94800EC1ADB695900F554FE /* SFJavaScriptCoreController.swift */,
 				F90E38171ADCBCD30063B35D /* SFWebListController.swift */,
+				F913B69C1AE49F0200A9F402 /* SFSearchListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -407,15 +424,18 @@
 				F94A1E781AD6732000B1C274 /* SFOperationQueueController.swift in Sources */,
 				F90E38241ADD1E3B0063B35D /* SFRLMResults.swift in Sources */,
 				F90E381B1ADCC71C0063B35D /* SFUIWebController.swift in Sources */,
+				F913B69D1AE49F0200A9F402 /* SFSearchListController.swift in Sources */,
 				F9D69AB41ADBC10000B48041 /* SFTopicUpdateController.swift in Sources */,
 				F9136BC01AB914AF00B26448 /* SFArrayDataSource.swift in Sources */,
 				F9DAAC271AD775CB00413087 /* SFOperation.swift in Sources */,
 				F9233EA91AC925E2009AD3EF /* SFCollectionLayout.swift in Sources */,
 				F95203C21ACA4E0500E49CC0 /* SFKBaseObject.swift in Sources */,
 				F9D69AB21ADBC0EB00B48041 /* SFTopicComposeController.swift in Sources */,
+				F913B6A41AE4DB1700A9F402 /* SFSearchDisplayController.swift in Sources */,
 				F90E38201ADCF7FD0063B35D /* SFTopicListCell.swift in Sources */,
 				F9E6D34A1ABA73C50059338E /* SFRefreshListController.swift in Sources */,
 				F94A1E761AD613DC00B1C274 /* SFRealmController.swift in Sources */,
+				F913B6A21AE4D6E900A9F402 /* SFSearchController.swift in Sources */,
 				F9E9333D1AB00A0B00C5B494 /* AppDelegate.swift in Sources */,
 				F9D69AB01ADBC0DB00B48041 /* SFTopicListController.swift in Sources */,
 				F94800ED1ADB695900F554FE /* SFJavaScriptCoreController.swift in Sources */,

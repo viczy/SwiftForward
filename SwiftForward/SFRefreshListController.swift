@@ -75,6 +75,7 @@ class SFRefreshListController: SFBaseController, UITableViewDelegate {
             }
         }
         if let myController = controller {
+            controller?.title = refreshArray[indexPath.row]
             self.navigationController?.pushViewController(myController, animated: true)
         }
     }
