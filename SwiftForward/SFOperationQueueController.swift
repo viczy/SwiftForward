@@ -44,10 +44,10 @@ class SFOperationQueueController: SFBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mainQueueBlock()
+//        self.mainQueueBlock()
 //        self.customQueueBlock()
-//        self.mainQueueSF()
-//        self.customQueueSF()
+        self.mainQueueSF()
+        self.customQueueSF()
     }
 
     //MARK:SetUP View
@@ -57,7 +57,10 @@ class SFOperationQueueController: SFBaseController {
 
     //MARK:Actions Private
     func mainQueueBlock() {
-        mainQueue.addOperation(operationBlock)
+        let operationBlock1 = NSBlockOperation { () -> Void in
+            println("current thread------\(NSThread.currentThread())")
+        }
+        mainQueue.addOperation(operationBlock1)
     }
 
     func customQueueBlock() {
@@ -65,7 +68,10 @@ class SFOperationQueueController: SFBaseController {
     }
 
     func mainQueueSF() {
-        mainQueue.addOperation(operationSF)
+        let operationSF1 = SFOperation { () -> Void in
+            println("current thread------\(NSThread.currentThread())")
+        }
+        mainQueue.addOperation(operationSF1)
     }
 
     func customQueueSF() {

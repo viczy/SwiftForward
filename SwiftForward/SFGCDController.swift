@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
-import Foundation
-
 class SFGCDController: SFBaseController {
     let dispatchGroup = dispatch_group_create()
     let asyncQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)

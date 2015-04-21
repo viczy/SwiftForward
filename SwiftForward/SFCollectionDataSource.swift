@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
-import Foundation
-
 typealias CollectionCellConfigureBlock = (UICollectionViewCell, AnyObject) -> Void
 
 class SFCollectionDataSource: NSObject, UICollectionViewDataSource {

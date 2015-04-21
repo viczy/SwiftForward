@@ -6,11 +6,10 @@
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
-import UIKit
-
 typealias TableCellConfigureBlock = (UITableViewCell, AnyObject) -> Void
 
 class SFArrayDataSource: NSObject, UITableViewDataSource {
+
     //MARK:Property
     private var items:Array<AnyObject>?
     private var cellIdentifier:String?

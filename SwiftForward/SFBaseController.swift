@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 everycode. All rights reserved.
 //
 
-import UIKit
-
 class SFBaseController: UIViewController {
 
     //MARK:Init
